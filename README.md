@@ -31,6 +31,10 @@ Delete – this allows you to delete this version
 
 *Improve Static Block Archive UI
 
+### Disclaimer
+
+* Minimal support is offered, use at your own risk. I would recommend deploying to a dev/staging environment first and testing your site before deploying to a live site.
+
 ### License
 The license is currently <a href="https://tldrlegal.com/license/creative-commons-attribution-noncommercial-(cc-nc)#summary">Creative Commons Attribution NonCommercial</a>.  TL;DR is that you can modify and distribute but not for commercial use.
 
