@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<package>
+    <name>Kimit_Cmspack</name>
+    <version>0.1.0</version>
+    <stability>stable</stability>
+    <license uri="http://www.kimit.com.au/eula">Custom License</license>
+    <channel>community</channel>
+    <extends/>
+    <summary>Version Control for CMS Pages</summary>
+    <description>Adds a tab for version control for the CMS Pages</description>
+    <notes>Added tabs to CMS Pages with versions&#xD;
+Added delete functionality&#xD;
+Added Preview functionality</notes>
+    <authors><author><name>John</name><user>Tranter</user><email>john@kimit.com.au</email></author></authors>
+    <date>2015-10-30</date>
+    <time>22:42:45</time>
+    <contents><target name="magelocal"><dir name="Kimit"><dir name="Cmspack"><dir name="Block"><dir name="Cms"><dir name="Block"><dir name="Edit"><dir name="Tab"><file name="Version.php" hash="a2e7581c4bb477d9845fbb7bda614fb6"/></dir></dir></dir><dir name="Page"><dir name="Edit"><dir name="Tab"><file name="Version.php" hash="a2e7581c4bb477d9845fbb7bda614fb6"/></dir></dir></dir></dir><file name="Cmsblock.php" hash="b27572af5525d8bf441fba12af91a064"/><file name="Cmspage.php" hash="4d039bc8c3479ef8b9974b75de1638e4"/></dir><dir name="Helper"><file name="Data.php" hash="4b257cafa6d067918ff0d95fdbb09d05"/><file name="Page.php" hash="1b309e91790abc53bb755cd845c39742"/></dir><dir name="Model"><file name="Blockarchive.php" hash="26d845af0dcff05757c5505a1266831d"/><file name="Observer.php" hash="3a80c906a39ef635f246342bdbbdf1c1"/><file name="Pagearchive.php" hash="bc2db46e6ee83740694ea827fe1039e1"/><dir name="Resource"><dir name="Blockarchive"><file name="Collection.php" hash="d5f7be55769dbe0a2e77c67d01b9d9c8"/></dir><file name="Blockarchive.php" hash="60e3ebb8e00288dabc3081a56a4e748b"/><dir name="Pagearchive"><file name="Collection.php" hash="9c131f1434a0a27e69a93891dec42fc4"/></dir><file name="Pagearchive.php" hash="d3ab13b91af51aba7a07cbd1d5d603c8"/></dir></dir><dir name="controllers"><file name="KimitversionController.php" hash="5e89863664018f2f2dd8ef1b3b32c83f"/><file name="PreviewController.php" hash="4946a5280ccc8117ff85e1e928c91ae8"/></dir><dir name="etc"><file name="config.xml" hash="d58a702c848396c683463f4578865348"/></dir><dir name="sql"><dir name="kimit_cmspack_setup"><file name="mysql4-install-0.1.0.php" hash="5ee5478b46b9024397a92172fe4fe089"/></dir></dir></dir></dir></target><target name="magedesign"><dir name="adminhtml"><dir name="default"><dir name="default"><dir name="layout"><file name="kimit_cmspack.xml" hash="21d9256878f00fcfee3029d30963b5af"/></dir><dir name="template"><dir name="kimitcmspack"><file name="block-select.phtml" hash="f53ba9882ebc23646137fae417928c7c"/><file name="page-grid.phtml" hash="31b17ea798b7ce5da052c6b766305c1d"/></dir></dir></dir></dir></dir></target><target name="mageetc"><dir name="modules"><file name="Kimit_Cmspack.xml" hash="c3448539f1878c713335f170d09778dc"/></dir></target><target name="mageskin"><dir name="adminhtml"><dir name="default"><dir name="default"><dir name="kimitcmspack"><file name="cmspack.css" hash="5df3112ccea0d11fc095d064f01c3ece"/></dir></dir></dir></dir></target></contents>
+    <compatible/>
+    <dependencies><required><php><min>5.3.0</min><max>6.0.0</max></php></required></dependencies>
+</package>

@@ -1,0 +1,66 @@
+<?php
+    $archiveCollection = $this->getArchiveCollection();
+    $page_id = $this->getPageId();
+?>
+<?php if ($archiveCollection->getSize()>0):?>
+
+
+    <div>
+        <div class="entry-edit">
+            <div class="entry-edit-head">
+                <h4 class="icon-head head-edit-form fieldset-legend">Revision Information</h4>
+            </div>
+            <div class="fieldset " id="page_base_fieldset">
+                <div class="hor-scroll grid">
+                    <table id="cmsversiongrid" cellspacing="0" class="data">
+                        <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Title</th>
+                            <th>Date</th>
+                            <th>Action</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <!--<td colspan="5" class="hidden"><input id="page_page_id" name="page_id" value="3" type="hidden"></td>-->
+                        </tr>
+
+                        <?php $_i = 0; ?>
+                        <?php foreach($archiveCollection as $archive) : ?>
+                            <tr class="pointer">
+                                <td><?php echo $archive->getArchiveId();?></td>
+                                <td><?php echo $archive->getTitle();?></td>
+                                <?php
+                                    $dataFormatted = Mage::helper('core')->formatDate($archive->getUpdateTime(), Mage_Core_Model_Locale::FORMAT_TYPE_MEDIUM, false);
+                                ?>
+                                <td><?php echo $dataFormatted;?></td>
+                                <td>
+                                    <button type="button" onclick="confirmRestoreVersion('<?php echo Mage::helper('adminhtml')->getUrl('adminhtml/kimitversion/restore',array('page_id'=>$page_id,'version_id'=> $archive->getArchiveId()));?>')"><span><span>Restore</span></span></button>
+                                    <button type="button" onclick="javascript:window.open('<?php echo Mage::helper('adminhtml')->getUrl('kimitcmspack/preview/preview',array('version_id'=> $archive->getArchiveId()));?>')"><span><span>Preview</span></span></button>
+                                    <button type="button" onclick="confirmDeleteVersion('<?php echo Mage::helper('adminhtml')->getUrl('adminhtml/kimitversion/delete',array('page_id'=>$page_id,'version_id'=> $archive->getArchiveId()));?>')"><span><span>Delete</span></span></button>
+                                </td>
+                            </tr>
+                        <?php endforeach; ?>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+<?php endif; ?>
+
+<script type="application/javascript">
+
+    function confirmDeleteVersion(url) {
+        if (confirm("Delete this Version?") == true) {
+            javascript:window.location.href=url;
+        }
+    }
+
+    function confirmRestoreVersion(url) {
+        if (confirm("Restore this Version?") == true) {
+            javascript:window.location.href=url;
+        }
+    }
+</script>

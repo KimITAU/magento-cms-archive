@@ -1,0 +1,67 @@
+<?php
+    $archiveCollection = $this->getArchiveCollection();
+?>
+
+<div class="kimitright">
+    <span>View Version</span>
+    <select name="kimitarchiveblockid" id="kimitarchiveblockid" class="select">
+    <?php if ($archiveCollection->getSize()>0):?>
+
+            <?php
+                foreach($archiveCollection as $archive)
+                {?>
+                    <option value="<?php echo $archive->getArchiveId();?>"><?php echo $archive->getTitle();?> - <?php echo $archive->getUpdateTime();?></option>
+                <?php
+                }
+            ?>
+
+        <script type="application/javascript">
+
+            var myArchiveBlocks = {'blocks':
+        <?php
+            //create json objects of data
+            $jsonData = array();
+            foreach($archiveCollection as $archive)
+            {?>
+                <?php $jsonData[] =  ($archive->getData()); ?>
+                <?php
+            }
+
+            echo json_encode($jsonData);
+            ?>
+            };
+
+
+            $("kimitarchiveblockid").observe("change", function(event){
+                var archiveid = this.getValue();
+                var blockObject = findArchiveBlockObject(archiveid)
+
+                //Turn off wysiwyg
+                if (tinyMCE.getInstanceById('block_content') != null) {
+                    tinyMCE.execCommand('mceRemoveControl', false, 'block_content');
+                }
+
+
+                $("block_title").setValue(blockObject.title);
+                $("block_content").setValue(blockObject.content);
+            })
+
+
+
+            function findArchiveBlockObject(archive_id) {
+                var blockArray = myArchiveBlocks.blocks;
+                for (var i = 0; i < blockArray.length; i++) {
+                    if (blockArray[i].archive_id == archive_id) {
+                        return(blockArray[i]);
+                    }
+                }
+            }
+
+
+        </script>
+    <?php else: ?>
+        <option>No Additional versions found</option>
+    <?php endif; ?>
+
+    </select>
+</div>

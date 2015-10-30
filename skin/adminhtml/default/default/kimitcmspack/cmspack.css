@@ -1,0 +1,16 @@
+
+
+.kimitright{ text-align:right;margin:0 0 15px;}
+
+.kimitright span {
+    margin: .3em .5em 0 0;
+    //color: #eb5e00;
+    font-size: 1.1em;
+    line-height: 1.1em;
+}
+
+#cmsversiongrid th{border-bottom:1px solid #ccc;}
+#cmsversiongrid tr:nth-child(odd)
+{
+    background: #f6f6f6;
+}
