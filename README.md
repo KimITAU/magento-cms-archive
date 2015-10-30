@@ -22,7 +22,9 @@ You can view the Block Versioning in menu “CMS => Static Blocks”, there's a 
 Whenever you save a CMS Page, a revision is automatically created, with a revision you can
 
 Restore – this restores the revision and overwrites the existing version
+
 Preview – this allows you to see what this version looks like with the default store
+
 Delete – this allows you to delete this version
 
 ### To Do
