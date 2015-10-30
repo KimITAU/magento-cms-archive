@@ -25,6 +25,10 @@ Restore – this restores the revision and overwrites the existing version
 Preview – this allows you to see what this version looks like with the default store
 Delete – this allows you to delete this version
 
+### To Do
+
+*Improve Static Block Archive UI
+
 ### License
 The license is currently <a href="https://tldrlegal.com/license/creative-commons-attribution-noncommercial-(cc-nc)#summary">Creative Commons Attribution NonCommercial</a>.  TL;DR is that you can modify and distribute but not for commercial use.
 
